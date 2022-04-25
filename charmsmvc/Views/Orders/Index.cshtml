@@ -1,0 +1,88 @@
+﻿@model IEnumerable<charmsmvc.Models.Orders>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style type="text/css">
+    TABLE {
+        background: #D8BFD8;
+        border: 2px double #D8BFD8;
+        color: black;
+    }
+</style>
+<h2>Заказы</h2>
+
+<p>
+    @Html.ActionLink("Оформить заказ", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.фамилия)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.имя)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.отчество_)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.паспорт)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.телефон)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.адрес)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.товары)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.сумма)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.дата_заказа)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.фамилия)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.имя)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.отчество_)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.паспорт)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.телефон)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.адрес)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.товары)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.сумма)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.дата_заказа)
+        </td>
+        <td>
+            @Html.ActionLink("Изменить", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Детали", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Удалить", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

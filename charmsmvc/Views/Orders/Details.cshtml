@@ -1,0 +1,91 @@
+﻿@model charmsmvc.Models.Orders
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Orders</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.фамилия)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.фамилия)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.имя)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.имя)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.отчество_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.отчество_)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.паспорт)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.паспорт)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.телефон)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.телефон)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.адрес)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.адрес)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.товары)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.товары)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.сумма)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.сумма)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.дата_заказа)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.дата_заказа)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

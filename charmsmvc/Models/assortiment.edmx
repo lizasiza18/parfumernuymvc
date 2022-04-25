@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище parfumernuyModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Assortiment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="название" Type="nvarchar" MaxLength="50" />
+          <Property Name="цена " Type="nvarchar" MaxLength="50" />
+          <Property Name="объем" Type="nchar" MaxLength="10" />
+          <Property Name="производитель " Type="nvarchar(max)" />
+          <Property Name="страна " Type="nvarchar" MaxLength="50" />
+          <Property Name="дата_призводства" Type="date" />
+          <Property Name="артикул" Type="nvarchar" MaxLength="50" />
+          <Property Name="количество" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="Хранилище parfumernuyModelContainer">
+          <EntitySet Name="Assortiment" EntityType="Self.Assortiment" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="parfumernuyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Assortiment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="название" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="цена_" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="объем" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="производитель_" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="страна_" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="дата_призводства" Type="DateTime" Precision="0" />
+          <Property Name="артикул" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="количество" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="parfumernuyEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Assortiments" EntityType="Self.Assortiment" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище parfumernuyModelContainer" CdmEntityContainer="parfumernuyEntities">
+          <EntitySetMapping Name="Assortiments">
+            <EntityTypeMapping TypeName="parfumernuyModel.Assortiment">
+              <MappingFragment StoreEntitySet="Assortiment">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="название" ColumnName="название" />
+                <ScalarProperty Name="цена_" ColumnName="цена " />
+                <ScalarProperty Name="объем" ColumnName="объем" />
+                <ScalarProperty Name="производитель_" ColumnName="производитель " />
+                <ScalarProperty Name="страна_" ColumnName="страна " />
+                <ScalarProperty Name="дата_призводства" ColumnName="дата_призводства" />
+                <ScalarProperty Name="артикул" ColumnName="артикул" />
+                <ScalarProperty Name="количество" ColumnName="количество" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

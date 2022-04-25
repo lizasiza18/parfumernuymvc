@@ -1,0 +1,83 @@
+﻿@model charmsmvc.Models.Assortiment
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Assortiment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.название)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.название)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.цена_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.цена_)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.объем)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.объем)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.производитель_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.производитель_)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.страна_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.страна_)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.дата_призводства)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.дата_призводства)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.артикул)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.артикул)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.количество)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.количество)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

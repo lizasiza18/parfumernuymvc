@@ -1,0 +1,82 @@
+﻿@model IEnumerable<charmsmvc.Models.Assortiment>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style type="text/css">
+    TABLE {
+        background: #D8BFD8;
+        border: 2px double #D8BFD8;
+        color: black;
+    }
+</style>
+<h2>Ассортимент</h2>
+
+<p>
+    @Html.ActionLink("Добавить новый", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.название)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.цена_)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.объем)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.производитель_)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.страна_)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.дата_призводства)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.артикул)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.количество)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.название)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.цена_)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.объем)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.производитель_)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.страна_)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.дата_призводства)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.артикул)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.количество)
+        </td>
+        <td>
+            @Html.ActionLink("Изменить", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Детали", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Удалить", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
